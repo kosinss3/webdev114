@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<!--
+Author: Scott Kosinski
+Assignment: Final Project
+-->
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="restaurant, scratch kitchen, fresh food, fresh, healthy, herbs, greenhouse, organic">
+	<meta name="description" content="Scratch kitchen serving freshly grown in-house herbs and veggies and healthy meals.">
+	<meta name="author" content="Scott Kosinski">
+	<link rel="shortcut icon" type="img/png" href="images/favicon.png">
+	<link rel="stylesheet" type="text/css" href="styles/normalize.css">
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
+	<link rel="stylesheet" type="text/css" href="styles/contact.css">
+	<title>Fresh Scratch Kitchen: Contact</title>
+</head>
+
+<body>
+	<header>
+		<div>
+			<a href="index.html"><img src="images/logo.png"></a>
+			<a href="index.html"><h1>Fresh Scratch Kitchen</h1></a>
+		</div>
+	</header>
+	<main>
+		<section id="restaurant">
+			<a href="restaurant.html">
+				<img src="images/restaurant.jpg">
+				<h2>Restaurant</h2>
+			</a>
+		</section>
+
+		<section id="greenhouse">
+			<a href="greenhouse.html">
+				<img src="images/greenhouse.jpg">
+				<h2>Greenhouse</h2>
+			</a>
+		</section>
+
+		<section id="events">
+			<a href="events.html">
+				<img src="images/event.jpg">
+				<h2>Events</h2>
+			</a>
+		</section>
+	</main>
+
+	<!-- Put the some info about us and the contact form here -->
+
+<article>
+		<h3>Lorem Ipsum.</h3>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquet est magna, eu volutpat felis commodo vitae. Nam eu velit non massa dignissim dapibus molestie nec neque. Aenean a dapibus sem. Ut ut arcu vel arcu commodo placerat. Donec finibus non sapien finibus gravida. Curabitur molestie ullamcorper egestas. In hac habitasse platea dictumst. 
+		</p>
+
+		<p>
+			 Sed ligula metus, sodales id quam quis, volutpat porta magna. Curabitur at risus est. Donec non ligula et tortor volutpat fringilla. Sed feugiat pellentesque dictum. Nunc tempor ligula nunc. Mauris elementum tincidunt felis et maximus. Etiam volutpat scelerisque felis quis auctor. Vivamus ante turpis, imperdiet sed convallis non, pellentesque ac est. 
+		</p>
+
+		<p>
+			 Fusce cursus mi quis turpis malesuada, at condimentum sapien finibus. Vivamus ut nisi felis. Sed condimentum facilisis facilisis. Suspendisse viverra semper cursus. In molestie ut mi quis facilisis. Sed vulputate ex non dignissim sollicitudin. Curabitur a odio eget mauris convallis pellentesque. Maecenas vel hendrerit mauris. Cras quis massa sollicitudin, ultrices orci quis, maximus ligula. 
+		</p>
+	</article>
+	<aside>
+		<h1>Contact Form</h1>
+	<form action="sendmail.php" method="post" name="contact_form" id="contact_form">
+		<fieldset>
+        	<legend>Contact</legend>
+            <label for="first_name">First Name:</label>
+			<input type="text" name="first_name" id="first_name" required><br>
+			<label for="last_name">Last Name:</label>
+			<input type="text" name="last_name" id="last_name" required><br>
+        	<label for="email">Email Address:</label>
+        	<input type="email" name="email" id="email" required><br>
+        	<label for="verify">Verify Email:</label>
+        	<input type="email" name="verify" id="verify" required autocomplete="off"><br>
+			<label for="phone">Phone Number:</label>
+			<input type="tel" name="phone" id="phone" pattern="\d{3}[\-]\d{3}[\-]\d{4}" placeholder="555-555-5555" required><br>
+		</fieldset>
+		<fieldset>
+    		<legend>Message</legend>
+			<label for="reservation_date">Reservation Date:</label>
+			<input type="date" name="reservation_date" id="today_date" required><br>
+			<label for="subject">Subject:</label>         
+            <select name="subject" id="subject">
+            	<option value="Restaurant">Restaurant</option>
+                <option value="Greenhouse">Greenhouse</option>
+                <option value="Events">Events</option>
+                <option value="Other">Other</option>
+            </select><br>
+			<label for="message">Body:</label>
+			<textarea id="message" name="message" rows="4" required></textarea>
+		</fieldset>
+		<fieldset id="buttons">
+			<legend>Submit Message</legend>
+			<label>&nbsp;</label>
+			<input type="submit" id="submit" value="Send Email">
+			<input type="reset" id="reset" value="Reset"><br>
+		</fieldset>
+	</form>
+
+	
+
+	</aside>
+
+	<footer>
+		<a href="about.html">About Us</a>
+		<a href="contact.html">Contact</a>
+	</footer>
+</body>
+
+</html>

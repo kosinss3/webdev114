@@ -1,0 +1,36 @@
+article {
+	grid-row: 3 / 4;
+	grid-column: 2 / span 6;
+	padding: 0 1em;
+}
+
+p, label, input {
+	margin-bottom: 1em;	
+}
+
+aside {
+	grid-row: 3 / 4;
+	grid-column: 9 / span 3;
+	padding: 0 1em;
+}
+
+fieldset {
+	padding: 1em;
+}
+
+input:required:invalid {
+    background-image: url(../images/required.png);
+    background-position: right top;
+    background-repeat: no-repeat;
+}
+
+input:focus:invalid {
+    background-image: url(../images/invalid.png);
+    background-position: right top;
+    background-repeat: no-repeat;
+}
+input:required:valid {
+    background-image: url(../images/valid.png);
+    background-position: right top;
+    background-repeat: no-repeat;
+}

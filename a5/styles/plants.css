@@ -1,0 +1,19 @@
+main a {
+	color: #009933;
+}
+
+article a:hover, article a > h2:hover {
+	color: #006600;
+}
+
+article p {
+	margin-bottom: 1em;
+}
+
+section a:hover > img {
+	opacity: 1;
+}
+
+h2 {
+	display: block;
+}

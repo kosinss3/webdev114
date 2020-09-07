@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<!--
+Author: Scott Kosinski
+Assignment: Final Project
+-->
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="restaurant, scratch kitchen, fresh food, fresh, healthy, herbs, greenhouse, organic">
+	<meta name="description" content="Scratch kitchen serving freshly grown in-house herbs and veggies and healthy meals.">
+	<meta name="author" content="Scott Kosinski">
+	<link rel="shortcut icon" type="img/png" href="../images/favicon.png">
+	<link rel="stylesheet" type="text/css" href="../styles/normalize.css">
+	<link rel="stylesheet" type="text/css" href="../styles/main.css">
+	<link rel="stylesheet" type="text/css" href="../styles/about.css">
+	<title>Fresh Scratch Kitchen: About Us</title>
+</head>
+
+<body>
+	<header>
+		<div>
+			<a href="../index.html"><img src="../images/logo.png"></a>
+			<a href="../index.html"><h1>Fresh Scratch Kitchen</h1></a>
+		</div>
+	</header>
+	<main>
+		<section id="restaurant">
+			<a href="restaurant.html">
+				<img src="../images/restaurant.jpg">
+				<h2>Restaurant</h2>
+			</a>
+		</section>
+
+		<section id="greenhouse">
+			<a href="greenhouse.html">
+				<img src="../images/greenhouse.jpg">
+				<h2>Greenhouse</h2>
+			</a>
+		</section>
+
+		<section id="events">
+			<a href="events.html">
+				<img src="../images/event.jpg">
+				<h2>Events</h2>
+			</a>
+		</section>
+	</main>
+
+	<!-- Put the some info about us and the contact form here -->
+
+<article>
+		<h3>Lorem Ipsum.</h3>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquet est magna, eu volutpat felis commodo vitae. Nam eu velit non massa dignissim dapibus molestie nec neque. Aenean a dapibus sem. Ut ut arcu vel arcu commodo placerat. Donec finibus non sapien finibus gravida. Curabitur molestie ullamcorper egestas. In hac habitasse platea dictumst. 
+		</p>
+
+		<p>
+			 Sed ligula metus, sodales id quam quis, volutpat porta magna. Curabitur at risus est. Donec non ligula et tortor volutpat fringilla. Sed feugiat pellentesque dictum. Nunc tempor ligula nunc. Mauris elementum tincidunt felis et maximus. Etiam volutpat scelerisque felis quis auctor. Vivamus ante turpis, imperdiet sed convallis non, pellentesque ac est. 
+		</p>
+
+		<p>
+			 Fusce cursus mi quis turpis malesuada, at condimentum sapien finibus. Vivamus ut nisi felis. Sed condimentum facilisis facilisis. Suspendisse viverra semper cursus. In molestie ut mi quis facilisis. Sed vulputate ex non dignissim sollicitudin. Curabitur a odio eget mauris convallis pellentesque. Maecenas vel hendrerit mauris. Cras quis massa sollicitudin, ultrices orci quis, maximus ligula. 
+		</p>
+	</article>
+	<aside>
+		<h1>Email Confirmation</h1>
+		<fieldset>
+        	<legend>Contact Information</legend>
+    		<label for="first_name">First Name:</label>
+			<input type="text" name="first_name" id="first_name" value="<?php echo $_REQUEST['first_name'] ?>" disabled><br>
+			<label for="last_name">Last Name:</label>
+			<input type="text" name="last_name" id="last_name" value="<?php echo $_REQUEST['last_name'] ?>" disabled><br>
+        	<label for="email">Email Address:</label>
+        	<input type="email" name="email" id="email" value="<?php echo $_REQUEST['email'] ?>" disabled><br>
+        	<label for="verify">Verify Email:</label>
+        	<input type="email" name="verify" id="verify" value="<?php echo $_REQUEST['email'] ?>" disabled><br>
+			<label for="phone">Phone Number:</label>
+			<input type="tel" name="phone" id="phone" value="<?php echo $_REQUEST['phone'] ?>" disabled><br>
+		</fieldset>
+		<fieldset>
+    		<legend>Message Information</legend>
+			<label for="reservation_date">Today's  Date:</label>
+			<input type="date" name="reservation_date" id="reservation_date" value="<?php echo $_REQUEST['reservation_date'] ?>" disabled><br>
+			<label for="subject">Subject:</label>
+			<input type="text" name="subject" id="subject" value="<?php echo $_REQUEST['subject'] ?>" disabled><br>
+			<label for="Message">Message:</label>
+			<textarea id="message" name="message" rows="4" disabled><?php echo $_REQUEST['message'] ?></textarea>
+		</fieldset>
+
+
+<?php
+  if (isset($_REQUEST['email'])) { //if "email" variable is filled out, send email
+  
+  //Set admin email for email to be sent to (use you own MATC email address)
+    $admin_email = "kosinss3@gmatc.matc.edu"; 
+
+  //Set PHP variable equal to information completed on the HTML form
+    $email = $_REQUEST['email']; //Request email that user typed on HTML form
+    $phone = $_REQUEST['phone']; //Request phone that user typed on HTML form
+    $reservation_date = $_REQUEST['reservation_date']; //Request subject that user typed on HTML form
+    $subject = $_REQUEST['subject']; //Request subject that user typed on HTML form
+    $message = $_REQUEST['message']; //Request message that user typed on HTML form
+  //Combine first name and last name, adding a space in between
+    $name = $_REQUEST['first_name'] . " " .  $_REQUEST['last_name']; 
+            
+  //Start building the email body combining multiple values from HTML form    
+    $body  = "From: " . $name . "\n"; 
+    $body .= "Email: " . $email . "\n"; //Continue the email body
+    $body .= "Phone: " . $phone . "\n"; //Continue the email body
+    $body .= "Reservation Date: " . $reservation_date . "\n"; //Continue the email body
+    $body .= "Message: " . $message; //Continue the email body
+  
+  //Create the email headers for the from and CC fields of the email     
+    $headers = "From: " . $name . " <" . $email . "> \r\n"; //Create email "from"
+    $headers .= "CC: " . $name . " <" . $email . ">"; //Send CC to visitor
+    
+  //Actually send the email from the web server using the PHP mail function
+  mail($admin_email, $subject, $body, $headers); 
+    
+  //Display email confirmation response on the screen
+  echo "Thank you for contacting us!"; 
+  }
+  
+  //if "email" variable is not filled out, display an error
+  else  { 
+     echo "There has been an error!";
+        }
+?>
+
+	</aside>
+
+	<footer>
+		<a href="about.html">About Us</a>
+	</footer>
+</body>
+
+</html>

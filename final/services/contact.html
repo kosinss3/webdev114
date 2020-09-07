@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<!--
+Author: Scott Kosinski
+Assignment: Final Project
+-->
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="restaurant, scratch kitchen, fresh food, fresh, healthy, herbs, greenhouse, organic">
+	<meta name="description" content="Scratch kitchen serving freshly grown in-house herbs and veggies and healthy meals.">
+	<meta name="author" content="Scott Kosinski">
+	<link rel="shortcut icon" type="img/png" href="../images/favicon.png">
+	<link rel="stylesheet" type="text/css" href="../styles/normalize.css">
+	<link rel="stylesheet" type="text/css" href="../styles/main.css">
+	<link rel="stylesheet" type="text/css" href="../styles/contact.css">
+	<title>Fresh Scratch Kitchen: Contact</title>
+</head>
+
+<body>
+	<header>
+		<nav id="menu">
+			<ul>
+				<li id="menu_button">
+					<a href=""><h4>Menu</h4></a>
+					<ul>
+						<li><a href="restaurant.html"><h5>Restaurant</h5></a></li>
+						<li><a href="greenhouse.html"><h5>Greenhouse</h5></a></li>
+						<li><a href="events.html"><h5>Events</h5></a></li>
+						<li><a href="about.html"><h5>About Us</h5></a></li>
+						<li><a href="contact.html"><h5>Contact</h5></a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		<div>
+			<a href="../index.html"><img src="../images/logo.png" alt="Logo"></a>
+			<a href="../index.html"><h1>Fresh Scratch Kitchen</h1></a>
+		</div>
+	</header>
+	<main>
+		<section id="restaurant">
+			<a href="restaurant.html">
+				<img src="../images/restaurant.jpg" alt="Restaurant">
+				<h2>Restaurant</h2>
+			</a>
+		</section>
+
+		<section id="greenhouse">
+			<a href="greenhouse.html">
+				<img src="../images/greenhouse.jpg" alt="Greenhouse">
+				<h2>Greenhouse</h2>
+			</a>
+		</section>
+
+		<section id="events">
+			<a href="events.html">
+				<img src="../images/event.jpg" alt="Events">
+				<h2>Events</h2>
+			</a>
+		</section>
+	</main>
+
+<article>
+		<h3>Contact Us</h3>
+		<p>
+			Have a question, or want to make a reservation? Fill out the contact form on this page to make restaurant reservations, inquire about our greenhouse, or book events. We will respond to you via email.
+		</p>
+
+		<h3>Restaurant</h3>
+		<p>
+			Make restaurant reservations or inquire about offerings.
+		</p>
+
+		<h3>Greenhouse</h3>
+		<p>
+			Ask about our greenhouse, place special orders, or reserve inventory.
+		</p>
+
+		<h3>Events</h3>
+		<p>
+			Host an event in the garden greehouse. Sponsor a farmers market. Large restaurant parties over 15.
+		</p>
+
+	</article>
+	<aside>
+	<form action="../sendmail.php" method="post" name="contact_form" id="contact_form">
+		<fieldset>
+        	<legend>Contact</legend>
+            <label for="first_name">First Name:</label>
+			<input type="text" name="first_name" id="first_name" required><br>
+			<label for="last_name">Last Name:</label>
+			<input type="text" name="last_name" id="last_name" required><br>
+        	<label for="email">Email Address:</label>
+        	<input type="email" name="email" id="email" required><br>
+        	<label for="verify">Verify Email:</label>
+        	<input type="email" name="verify" id="verify" required autocomplete="off"><br>
+			<label for="phone">Phone Number:</label>
+			<input type="tel" name="phone" id="phone" pattern="\d{3}[\-]\d{3}[\-]\d{4}" placeholder="555-555-5555" required><br>
+		</fieldset>
+		<fieldset>
+    		<legend>Message</legend>
+			<label for="reservation_date">Reservation Date:</label>
+			<input type="date" name="reservation_date" id="today_date" required><br>
+			<label for="subject">Subject:</label>         
+            <select name="subject" id="subject">
+            	<option value="Restaurant">Restaurant</option>
+                <option value="Greenhouse">Greenhouse</option>
+                <option value="Events">Events</option>
+                <option value="Other">Other</option>
+            </select><br>
+			<label for="message">Body:</label>
+			<textarea id="message" name="message" rows="4" required></textarea>
+		</fieldset>
+		<fieldset id="buttons">
+			<legend>Submit Message</legend>
+			<label>&nbsp;</label>
+			<input type="submit" id="submit" value="Send Email">
+			<input type="reset" id="reset" value="Reset"><br>
+		</fieldset>
+	</form>
+
+	
+
+	</aside>
+
+	<footer>
+		<a href="about.html">About Us</a>
+		<a href="contact.html">Contact</a>
+	</footer>
+</body>
+
+</html>
